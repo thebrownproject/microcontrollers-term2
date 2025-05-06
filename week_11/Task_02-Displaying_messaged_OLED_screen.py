@@ -4,7 +4,7 @@ from time import sleep
 import time
 
 # Setup I2C connection
-i2c = I2C(0, scl=Pin(5), sda=Pin(4))
+i2c = I2C(0, scl=Pin(14), sda=Pin(15))
 oled = SSD1306_I2C(128, 64, i2c, addr=0x3C)
 
 # Clear the screen
