@@ -20,6 +20,8 @@ display.show("    ")
 
 # Set brightness (0-7)
 display.brightness(7)
+
+# Show the time
 while True:
     display.numbers(hour, minute, colon=True)
     print(hour, minute)
