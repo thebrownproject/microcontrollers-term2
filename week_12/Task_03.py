@@ -32,12 +32,9 @@ button_stop.irq(trigger=Pin.IRQ_FALLING, handler=stop_handler)
 def update_display():
     global minutes, seconds
 
-    display.numbers(minutes, seconds, colon=True)
-    time.sleep(0.5)
-    display.numbers(minutes, seconds, colon=False)
-    time.sleep(0.5)
-
     if running:
+        display.numbers(minutes, seconds, colon=True)
+        time.sleep(1)
         # Increment seconds
         seconds = seconds + 1
         # Handle minute rollover
@@ -47,6 +44,11 @@ def update_display():
         # Handle hour rollover
         if minutes > 99:
             minutes = 0
+    else:
+        display.numbers(minutes, seconds, colon=True)
+        time.sleep(0.5)
+        display.numbers(minutes, seconds, colon=False)
+        time.sleep(0.5)
 
 while True:
     update_display()
