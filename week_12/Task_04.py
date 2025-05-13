@@ -35,7 +35,7 @@ while True:
     # Print distance
     distance = sensor.distance_cm()
     distance_int = int(distance)
-    oled.text(f"Distance:", 0, 0)
+    oled.text("Distance:", 0, 0)
     if distance_int < 100:
         oled.text(f"{distance_int} cm", 0, 10)
         oled.show()
